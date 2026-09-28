@@ -1,0 +1,20 @@
+Options -Indexes
+
+# Never expose environment/configuration files through Apache.
+<FilesMatch "^(\.env|\.env\..*)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|README.*|.*\.sql|.*\.md|.*\.txt)$">
+    Require all denied
+</FilesMatch>
+
+# Never expose editor/backup/debug files.
+<FilesMatch "\.(bak|old|orig|log|dist|ini)$">
+    Require all denied
+</FilesMatch>
+
+# Never expose archive/source-control/temporary files.
+<FilesMatch "^(\.git|\.gitignore|.*\.(zip|rar|7z|tar|gz|sql|env|bak|old|orig|save|swp))$">
+    Require all denied
+</FilesMatch>

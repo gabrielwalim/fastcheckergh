@@ -1,0 +1,2 @@
+FastCheckerGH is configured in this package for local XAMPP development/testing.
+No hosting/deployment configuration is required.
